@@ -206,7 +206,7 @@ async function sendMessage(text) {
                     data.content.forEach(tr => {
                         const resultCard = document.createElement('details');
                         resultCard.className = 'tool-result-card';
-                        resultCard.open = true; // Mặc định mở
+                        resultCard.open = false; // Thu gọn mặc định, tránh trùng với response
 
                         const toolLabel = getToolLabel(tr.name);
                         resultCard.innerHTML = `
