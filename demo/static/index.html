@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBuddy - Trợ lý Du lịch Thông minh</title>
+    <meta name="description" content="TravelBuddy - AI Agent hỗ trợ lập kế hoạch du lịch Việt Nam thông minh">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header" id="app-header">
+            <div class="header-left">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <span class="logo-emoji">🌍</span>
+                        <div class="logo-pulse"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1>TravelBuddy</h1>
+                        <p class="tagline">Trợ lý Du lịch AI</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="status-badge" id="status-badge">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Sẵn sàng</span>
+                </div>
+                <button class="btn-icon" id="btn-new-chat" title="Cuộc hội thoại mới">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-area" id="chat-area">
+            <!-- Welcome Screen -->
+            <div class="welcome-screen" id="welcome-screen">
+                <div class="welcome-hero">
+                    <div class="welcome-icon-wrapper">
+                        <span class="welcome-icon">✈️</span>
+                        <div class="welcome-ring"></div>
+                        <div class="welcome-ring ring-2"></div>
+                    </div>
+                    <h2 class="welcome-title">Xin chào! Tôi là <span class="gradient-text">TravelBuddy</span></h2>
+                    <p class="welcome-subtitle">Tôi có thể giúp bạn tìm chuyến bay, đặt khách sạn và lập kế hoạch du lịch hoàn hảo trên khắp Việt Nam 🇻🇳</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">✈️</div>
+                        <div class="feature-info">
+                            <h3>Tìm chuyến bay</h3>
+                            <p>So sánh giá vé từ nhiều hãng bay</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏨</div>
+                        <div class="feature-info">
+                            <h3>Đặt khách sạn</h3>
+                            <p>Từ hostel đến resort 5 sao</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-info">
+                            <h3>Tính ngân sách</h3>
+                            <p>Quản lý chi tiêu thông minh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="suggestions-section">
+                    <p class="suggestions-label">💡 Bạn có thể thử hỏi:</p>
+                    <div class="suggestions-grid" id="suggestions-grid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages Container -->
+            <div class="messages-container" id="messages-container">
+                <!-- Messages are inserted here dynamically -->
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <footer class="input-area" id="input-area">
+            <div class="input-wrapper">
+                <div class="input-container">
+                    <textarea 
+                        id="message-input" 
+                        placeholder="Hỏi TravelBuddy về chuyến đi của bạn..."
+                        rows="1"
+                        maxlength="2000"
+                    ></textarea>
+                    <button class="btn-send" id="btn-send" title="Gửi tin nhắn">
+                        <svg class="send-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        <div class="send-loading">
+                            <div class="spinner"></div>
+                        </div>
+                    </button>
+                </div>
+                <p class="input-hint">Enter để gửi • Shift+Enter để xuống dòng</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
